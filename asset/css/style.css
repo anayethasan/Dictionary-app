@@ -75,8 +75,18 @@ body{
     margin: -3px 0 -10px;
     margin-bottom: 5px;
 }
-.wrapper ul{
+.wrapper.active .text-info{
     display: none;
+}
+.wrapper ul{
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.2s ease;
+}
+.wrapper.active ul{
+    height: 303px;
+    opacity: 1;
 }
 .wrapper ul li{
     display: flex;
@@ -103,6 +113,13 @@ ul .word i{
     cursor: pointer;
     color: #7c7c7c;
     font-size: 18px;
+}
+ul .content{
+    max-height: 215px;
+    overflow-y: auto;
+}
+ul .content::-webkit-scrollbar{
+    width: 0px;
 }
 .content li .detalis{
     padding-left: 10px;
